@@ -1,0 +1,60 @@
+﻿@model Encyklopediaa.Models.Objects.Artykul
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Artykuł</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        @* <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treść)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treść)
+        </dd> *@
+        @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataPublication)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataPublication)
+        </dd> *@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Użytkownik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Użytkownik.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rodzina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rodzina.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Admin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Admin.Email)
+        </dd>
+       @*  <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Multimedia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Multimedia.Description)
+        </dd> *@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

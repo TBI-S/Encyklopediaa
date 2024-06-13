@@ -1,0 +1,64 @@
+﻿@model Encyklopediaa.Models.Objects.Artykul
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Artykuł</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="Treść" class="control-label"></label>
+                <input asp-for="Treść" class="form-control" />
+                <span asp-validation-for="Treść" class="text-danger"></span>
+            </div> *@
+            @* <div class="form-group">
+                <label asp-for="DataPublication" class="control-label"></label>
+                <select asp-for="DataPublication" class="form-control"></select>
+                <span asp-validation-for="DataPublication" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="UżytkownikId" class="control-label"></label>
+                <select asp-for="UżytkownikId" class ="form-control" asp-items="ViewBag.UżytkownikId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RodzinaID" class="control-label"></label>
+                <select asp-for="RodzinaID" class ="form-control" asp-items="ViewBag.RodzinaID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminId" class="control-label"></label>
+                <select asp-for="AdminId" class ="form-control" asp-items="ViewBag.AdminId"></select>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="MultimediaId" class="control-label"></label>
+                <select asp-for="MultimediaId" class ="form-control" asp-items="ViewBag.MultimediaId"></select>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Obraz" class="control-label"></label>
+                <input asp-for="Obraz" type="file" class="form-control" />
+                <span asp-validation-for="Obraz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

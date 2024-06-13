@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Encyklopediaa.Models.Objects.Artykul>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Treść)
+            </th> *@
+            @* <th>
+                @Html.DisplayNameFor(model => model.DataPublication)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Użytkownik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rodzina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Multimedia)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Treść)
+                </td> *@
+            @* <td>
+                @Html.DisplayFor(modelItem => item.DataPublication)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Użytkownik.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rodzina.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Admin.Email)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.Multimedia.Description)
+            </td> *@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
